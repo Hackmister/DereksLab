@@ -1,0 +1,27 @@
+/* quality of life tweaks for bootstrap sites */
+
+body {
+	padding-top: 7.5em;
+}
+
+.section {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+/* custom floating animation (for hal-9000)  */
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-15px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+.floating {
+	margin-top: 15px;
+	animation: float 5s ease-in-out infinite;
+}
