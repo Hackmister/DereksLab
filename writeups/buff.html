@@ -41,11 +41,32 @@
 					<p class="card-text">Hmmm, that didn't seem to work. Let's try adding the flag -Pn.</p>
 					<code class="card-text">nmap -sC -sV -Pn 10.10.10.198</code>
 					<br>
+					<center><img src="Screenshot from 2020-11-10 15-51-49.png" style="height: 60%; width: 100%;"></center>
 					<br>
 					<p class="card-text">Yes! Looks like the host IS up! The scan shows us that port 8080 is open. Let's open that on our browser</p>
 					<code class="card-text">http://10.10.10.198:8080/</code>
 					<br>
 					<center><img src="Screenshot from 2020-11-10 15-44-20.png" style="height: 60%; width: 100%"></center>
+					<br>
+					<p class="card-text">It's time we search around the webapp for any ideas.</p>
+					<br>
+					<center><img src="Screenshot from 2020-11-10 15-55-45.png" style="height: 60%; width: 100%;"></center>
+					<br>
+					<code class="card-text">Gym Management Software 1.0</code>
+					<br>
+					<p class="card-text">This is some great information for us! Let's see if there are any known vulnerabilities in this software. You can either use google, or I like to use <code>searchsploit</code></p>
+					<pre>
+					<code class="card-text">searchsploit Gym Management
+--------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                         |  Path
+--------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Gym Management System 1.0 - Unauthenticated Remote Code Execution                                                                      | php/webapps/48506.py
+--------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+[derek@archivist ~]$ 
+</code></pre>
+					<br>
+					<p class="card-text">This is great news! There is a Remote Code Execution (RCE) exploit ready to be used! Download it, and we can use it to gain a web shell to the server.</p>
 				</div>
 			</div>
 
