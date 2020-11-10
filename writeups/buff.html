@@ -36,13 +36,15 @@
 					<p class="card-text">Let's start with some basic scanning. I usually start with an nmap scan...</p>
 					<code class="card-text">nmap -sC -sV 10.10.10.198</code>
 					<br>
-					<img src="Screenshot from 2020-11-10 15-30-15.png" style="height: 60%; width: 60%;">
+					<img src="Screenshot from 2020-11-10 15-30-15.png" style="height: 60%; width: 100%;">
 					<br>
 					<p class="card-text">Hmmm, that didn't seem to work. Let's try adding the flag -Pn.</p>
 					<code class="card-text">nmap -sC -sV -Pn 10.10.10.198</code>
 					<br>
 					<br>
 					<p class="card-text">Yes! Looks like the host IS up! The scan shows us that port 8080 is open. Let's open that on our browser</p>
+					<code class="card-text">http://10.10.10.198:8080/</code>
+					<br>
 				</div>
 			</div>
 
